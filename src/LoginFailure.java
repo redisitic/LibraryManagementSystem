@@ -6,7 +6,7 @@ public class LoginFailure extends JFrame implements ActionListener{
     JButton okButton;
     public LoginFailure(){
         super("Login Failure");
-        setLayout(new GridLayout(6,1,8,8));
+        setLayout(new GridLayout(2,1,8,8));
         setSize(300, 600);
         Font fontRegular = new Font("Segoe UI", Font.PLAIN, 20);
 

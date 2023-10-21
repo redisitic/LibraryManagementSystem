@@ -15,7 +15,7 @@ public class Login extends JFrame implements ActionListener {
         setLayout(new GridLayout(6,1,8,8));
         setSize(400, 300);
 
-        Font fontRegular = new Font("Segoe UI", Font.PLAIN, 20);
+        Font fontRegulawr = new Font("Segoe UI", Font.PLAIN, 20);
         Font fontBold = new Font("Segoe UI", Font.BOLD, 20);
         
         JPanel titlePanel1 = new JPanel();
@@ -29,9 +29,12 @@ public class Login extends JFrame implements ActionListener {
         JLabel userLabel = new JLabel("Username: ");
         userLabel.setFont(fontRegular);
         userText = new JTextField("");
+        userText.setFont(fontRegular);
         JLabel passLabel = new JLabel("Password: ");
         passLabel.setFont(fontRegular);
         passText = new JTextField("");
+        passText.setFont(fontRegular);
+
         loginPanel1.add(userLabel);
         loginPanel1.add(userText);
         loginPanel1.add(passLabel);
@@ -52,9 +55,12 @@ public class Login extends JFrame implements ActionListener {
         JLabel adminLabel = new JLabel("Username: ");
         adminLabel.setFont(fontRegular);
         adminText = new JTextField("");
+        adminText.setFont(fontRegular);
         JLabel pass2Label = new JLabel("Password: ");
         pass2Label.setFont(fontRegular);
         pass2Text = new JTextField("");
+        pass2Text.setFont(fontRegular);
+
         loginPanel2.add(adminLabel);
         loginPanel2.add(adminText);
         loginPanel2.add(pass2Label);
