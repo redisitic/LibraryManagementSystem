@@ -15,7 +15,7 @@ public class Login extends JFrame implements ActionListener {
         setLayout(new GridLayout(6,1,8,8));
         setSize(400, 300);
 
-        Font fontRegulawr = new Font("Segoe UI", Font.PLAIN, 20);
+        Font fontRegular = new Font("Segoe UI", Font.PLAIN, 20);
         Font fontBold = new Font("Segoe UI", Font.BOLD, 20);
         
         JPanel titlePanel1 = new JPanel();
