@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Login extends JFrame implements ActionListener {
-    
+    public static String username;
     JButton loginButton1;
     JButton loginButton2;
     JTextField userText;
@@ -12,7 +12,7 @@ public class Login extends JFrame implements ActionListener {
     JTextField pass2Text;
     public Login(){
         super("Login");
-        setLayout(new GridLayout(6,1,8,8));
+        setLayout(new GridLayout(3,1,8,8));
         setSize(400, 300);
 
         Font fontRegular = new Font("Segoe UI", Font.PLAIN, 20);
@@ -44,12 +44,6 @@ public class Login extends JFrame implements ActionListener {
         loginButton1.setFont(fontRegular);
         loginButton1.addActionListener(this);
 
-        JPanel titlePanel2 = new JPanel();
-        titlePanel2.setLayout(new GridLayout(1, 1, 12, 12));
-        JLabel titleLabel2 = new JLabel("Admin Login");
-        titleLabel2.setFont(fontBold);
-        titlePanel2.add(titleLabel2);
-
         JPanel loginPanel2 = new JPanel();
         loginPanel2.setLayout(new GridLayout(2, 2, 8, 8));
         JLabel adminLabel = new JLabel("Username: ");
@@ -61,11 +55,6 @@ public class Login extends JFrame implements ActionListener {
         pass2Text = new JTextField("");
         pass2Text.setFont(fontRegular);
 
-        loginPanel2.add(adminLabel);
-        loginPanel2.add(adminText);
-        loginPanel2.add(pass2Label);
-        loginPanel2.add(pass2Text);
-
         loginButton2 = new JButton("Login");
         loginButton2.addActionListener(this);
         loginButton2.setFont(fontRegular);
@@ -73,9 +62,6 @@ public class Login extends JFrame implements ActionListener {
         add(titlePanel1);
         add(loginPanel1);
         add(loginButton1);
-        add(titlePanel2);
-        add(loginPanel2);
-        add(loginButton2);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -96,6 +82,7 @@ public class Login extends JFrame implements ActionListener {
                 new LoginFailure();
             }
             String user = userText.getText();
+            username = user;
             String pass = passText.getText();
             if(auth.Check(user, pass)){
                 new Dashboard();
@@ -111,14 +98,6 @@ public class Login extends JFrame implements ActionListener {
                 @SuppressWarnings("unused")
                 String pass = passText.getText();
             }catch(NullPointerException npe){
-                new LoginFailure();
-            }
-            String user = adminText.getText();
-            String pass = pass2Text.getText();
-            if(auth.AdminCheck(user, pass)){
-                new AdminDashboard();
-                dispose();
-            } else {
                 new LoginFailure();
             }
         }

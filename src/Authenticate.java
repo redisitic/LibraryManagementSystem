@@ -18,12 +18,4 @@ public class Authenticate {
             return false;
         }
     }
-    boolean AdminCheck(String adminName, String adminPass){
-        if(adminName.equals("secret") && adminPass.equals("7845")){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 }

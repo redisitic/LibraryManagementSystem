@@ -1,5 +1,4 @@
 import java.io.*;
-
 public class Library implements Serializable {
     private TreeNode root;
 
@@ -45,25 +44,5 @@ public class Library implements Serializable {
         } else {
             return searchNode(root.right, title);
         }
-    }
-
-    public void saveToFile(String filename) {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename))) {
-            outputStream.writeObject(this);
-            System.out.println("Library data saved to " + filename);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static Library loadFromFile(String filename) {
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename)) ) {
-            Library library = (Library) inputStream.readObject();
-            System.out.println("Library data loaded from " + filename);
-            return library;
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }
