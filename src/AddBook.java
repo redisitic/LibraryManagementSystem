@@ -12,7 +12,7 @@ public class AddBook extends JFrame implements ActionListener {
     TextField description;
     
     AddBook(){
-        super("Dashboard");
+        super("Add Book");
         setLayout(new GridLayout(5,2,8,8));
         setSize(400, 300);
 
