@@ -1,11 +1,11 @@
-import java.util.HashMap;
+import java.util.*;
 public class Authenticate {
     HashMap<String, String> userDatabase = new HashMap<>();
 
     boolean Check(String enteredUsername, String enteredPassword) {
-        userDatabase.put("rhythm", "077");
-        userDatabase.put("zayaan", "058");
-        userDatabase.put("nilansh", "069");
+        userDatabase.put("Rhythm", "077");
+        userDatabase.put("Zayaan", "058");
+        userDatabase.put("Nilansh", "069");
 
         if (userDatabase.containsKey(enteredUsername)) {
             String storedPassword = userDatabase.get(enteredUsername);

@@ -3,13 +3,14 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class AddBook extends JFrame implements ActionListener {
+    Library lib = Library.getInstance();
     JButton backDash;
     JButton add;
     TextField title;
     TextField author;
     TextField quantity;
     TextField description;
-
+    
     AddBook(){
         super("Dashboard");
         setLayout(new GridLayout(5,2,8,8));
@@ -66,16 +67,28 @@ public class AddBook extends JFrame implements ActionListener {
             dispose();
         }
         if(e.getSource() == add){
+            if(title.getText().equals("") || author.getText().equals("") || quantity.getText().equals("") || description.getText().equals("")){
+                new AddBookFailure();
+                return;
+            }
             String title = this.title.getText();
             String author = this.author.getText();
+            try{
+                Integer.parseInt(this.quantity.getText());
+            }catch(NumberFormatException nfe){
+                new AddBookFailure();
+                this.quantity.setText("");
+                return;
+            }
             int quantity = Integer.parseInt(this.quantity.getText());
             String description = this.description.getText();
             Book book = new Book(title, author, quantity, description);
-            new Dashboard();
-            dispose();
+            lib.insert(book);
+            new AddBookSuccess();
+            this.title.setText("");
+            this.author.setText("");
+            this.quantity.setText("");
+            this.description.setText("");
         }
-    }
-    public static void main(String[] args) {
-        new AddBook();
     }
 }

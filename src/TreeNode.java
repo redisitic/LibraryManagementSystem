@@ -1,4 +1,4 @@
-class TreeNode{
+public class TreeNode{
     Book book;
     TreeNode left;
     TreeNode right;
@@ -9,4 +9,3 @@ class TreeNode{
         right = null;
     }
 }
-

@@ -6,8 +6,7 @@ public class Dashboard extends JFrame implements ActionListener {
     JLabel welcomeLabel;
     JButton addBook;
     JButton searchBook;
-    JButton issueBook;
-    JButton returnBook;
+    JButton logOutButton;
 
     public Dashboard() {
         super("Dashboard");
@@ -22,14 +21,14 @@ public class Dashboard extends JFrame implements ActionListener {
         searchBook = new JButton("Search Book");
         searchBook.addActionListener(this);
         searchBook.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-        issueBook = new JButton("Issue Book");
-        issueBook.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-        issueBook.addActionListener(this);
+        logOutButton = new JButton("Log Out");
+        logOutButton.addActionListener(this);
+        logOutButton.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 
         add(welcomeLabel);
         add(addBook);
         add(searchBook);
-        add(issueBook);
+        add(logOutButton);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -40,6 +39,14 @@ public class Dashboard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == addBook) {
             new AddBook();
+            dispose();
+        }
+        if (e.getSource() == searchBook) {
+            new SearchBook();
+            dispose();
+        }
+        if(e.getSource() == logOutButton){
+            new Login();
             dispose();
         }
     }

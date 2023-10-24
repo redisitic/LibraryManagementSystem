@@ -1,9 +1,16 @@
-import java.io.*;
-public class Library implements Serializable {
+public class Library{
+    private static Library instance;
     private TreeNode root;
 
-    public Library() {
+    private Library() {
         root = null;
+    }
+
+    public static Library getInstance() {
+        if (instance == null) {
+            instance = new Library();
+        }
+        return instance;
     }
 
     public void insert(Book book) {

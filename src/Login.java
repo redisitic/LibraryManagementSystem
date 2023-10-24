@@ -6,13 +6,12 @@ public class Login extends JFrame implements ActionListener {
     public static String username;
     JButton loginButton1;
     JButton loginButton2;
+    JButton quitButton;
     JTextField userText;
     JTextField passText;
-    JTextField adminText;
-    JTextField pass2Text;
     public Login(){
         super("Login");
-        setLayout(new GridLayout(3,1,8,8));
+        setLayout(new GridLayout(4,1,8,8));
         setSize(400, 300);
 
         Font fontRegular = new Font("Segoe UI", Font.PLAIN, 20);
@@ -44,24 +43,14 @@ public class Login extends JFrame implements ActionListener {
         loginButton1.setFont(fontRegular);
         loginButton1.addActionListener(this);
 
-        JPanel loginPanel2 = new JPanel();
-        loginPanel2.setLayout(new GridLayout(2, 2, 8, 8));
-        JLabel adminLabel = new JLabel("Username: ");
-        adminLabel.setFont(fontRegular);
-        adminText = new JTextField("");
-        adminText.setFont(fontRegular);
-        JLabel pass2Label = new JLabel("Password: ");
-        pass2Label.setFont(fontRegular);
-        pass2Text = new JTextField("");
-        pass2Text.setFont(fontRegular);
-
-        loginButton2 = new JButton("Login");
-        loginButton2.addActionListener(this);
-        loginButton2.setFont(fontRegular);
+        quitButton = new JButton("Quit");
+        quitButton.addActionListener(this);
+        quitButton.setFont(fontRegular);
 
         add(titlePanel1);
         add(loginPanel1);
         add(loginButton1);
+        add(quitButton);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -91,15 +80,8 @@ public class Login extends JFrame implements ActionListener {
                 new LoginFailure();
             }
         }
-        if(e.getSource() == loginButton2){
-            try{
-                @SuppressWarnings("unused")
-                String user = adminText.getText(); 
-                @SuppressWarnings("unused")
-                String pass = passText.getText();
-            }catch(NullPointerException npe){
-                new LoginFailure();
-            }
+        if(e.getSource() == quitButton){
+            dispose();
         }
     }
 }

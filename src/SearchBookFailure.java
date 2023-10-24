@@ -2,15 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoginFailure extends JFrame implements ActionListener{
+class SearchBookFailure extends JFrame implements ActionListener{
     JButton okButton;
-    public LoginFailure(){
-        super("Login Failure");
+    public SearchBookFailure(){
+        super("Failure to search book");
         setLayout(new GridLayout(2,1,8,8));
         setSize(300, 600);
         Font fontRegular = new Font("Segoe UI", Font.PLAIN, 20);
 
-        JLabel failLabel = new JLabel("Username or Password is incorrect");
+        JLabel failLabel = new JLabel("Book not found");
         failLabel.setFont(fontRegular);
 
         okButton = new JButton("OK");
@@ -30,5 +30,4 @@ public class LoginFailure extends JFrame implements ActionListener{
             dispose();
         }
     }
-    
 }
