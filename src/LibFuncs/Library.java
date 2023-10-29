@@ -1,3 +1,5 @@
+package LibFuncs;
+
 public class Library{
     private static Library instance;
     private TreeNode root;

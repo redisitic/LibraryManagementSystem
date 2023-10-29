@@ -1,4 +1,5 @@
 import javax.swing.*;
+import LibFuncs.*;
 import java.awt.*;
 import java.awt.event.*;
 

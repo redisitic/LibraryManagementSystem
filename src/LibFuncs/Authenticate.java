@@ -1,8 +1,9 @@
+package LibFuncs;
 import java.util.*;
 public class Authenticate {
     HashMap<String, String> userDatabase = new HashMap<>();
 
-    boolean Check(String enteredUsername, String enteredPassword) {
+    public boolean Check(String enteredUsername, String enteredPassword) {
         userDatabase.put("Rhythm", "077");
         userDatabase.put("Zayaan", "058");
         userDatabase.put("Nilansh", "069");
