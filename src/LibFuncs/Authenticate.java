@@ -5,8 +5,8 @@ public class Authenticate {
 
     public boolean Check(String enteredUsername, String enteredPassword) {
         userDatabase.put("Rhythm", "077");
-        userDatabase.put("Zayaan", "058");
-        userDatabase.put("Nilansh", "069");
+        userDatabase.put("Minav", "083");
+        userDatabase.put("Yashank", "089");
 
         if (userDatabase.containsKey(enteredUsername)) {
             String storedPassword = userDatabase.get(enteredUsername);
