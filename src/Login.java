@@ -53,8 +53,17 @@ public class Login extends JFrame implements ActionListener {
         add(loginButton1);
         add(quitButton);
 
+        titleLabel1.setHorizontalAlignment(JLabel.CENTER);
+        userLabel.setHorizontalAlignment(JLabel.CENTER);
+        passLabel.setHorizontalAlignment(JLabel.CENTER);
+        loginButton1.setHorizontalAlignment(JButton.CENTER);
+        quitButton.setHorizontalAlignment(JButton.CENTER);
+
+
+    
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
+        this.setSize(400, 300);
+        setLocationRelativeTo(null);
         setResizable(true);
         setVisible(true);
     }
